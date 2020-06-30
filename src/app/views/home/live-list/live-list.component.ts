@@ -16,10 +16,15 @@ export class LiveListComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.getLives();
   }
 
   getLives(){
-    this.liveService.getLivesWithFlag('previous').subscribe(data =>)
+    this.liveService.getLivesWithFlag('previous').subscribe(data =>{
+
+      this.livesPrevious = data.content;
+      console.log(this.livesPrevious);
+    });
   }
 
 }
